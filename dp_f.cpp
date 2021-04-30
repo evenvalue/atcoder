@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <cassert>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,7 +7,6 @@ using namespace std;
 void solve(const string &s, const string &t) {
   const int n = s.size();
   const int m = t.size();
-  assert(0 <= n and 0 <= m);
 
   vector<vector<int>> best(n, vector<int>(m));
   best[0][0] = (s[0] == t[0] ? 1 : 0);
