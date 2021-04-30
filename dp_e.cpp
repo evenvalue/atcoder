@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+#include <numeric>
 #include <vector>
 using namespace std;
 
@@ -16,11 +17,10 @@ int main() {
   cin >> n >> capacity;
   vector<int> w(n);
   vector<int> v(n);
-  int value_sum = 0;
   for (int i = 0; i < n; i++) {
     cin >> w[i] >> v[i];
-    value_sum += v[i];
   }
+  const int value_sum = accumulate(v.begin(), v.end(), 0);
   vector<int64> small(value_sum + 1, kInf);
   small[0] = 0;
   for (int item = 0; item < n; item++) {
