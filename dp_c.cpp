@@ -8,20 +8,22 @@ int main() {
   cin.tie(nullptr);
   cout.tie(nullptr);
 
+  struct day {
+    int a, b, c;
+  };
+
   int n;
   cin >> n;
-  vector<vector<int>> hobby(n, vector<int>(3));
-  for (int day = 0; day < n; day++) {
-    cin >> hobby[day][0] >> hobby[day][1] >> hobby[day][2];
+  vector<day> hobby(n);
+  for (day &today : hobby) {
+    cin >> today.a >> today.b >> today.c;
   }
-  vector<vector<int>> happy(n, vector<int>(3));
+  vector<day> happy(n);
   happy[0] = hobby[0];
-  for (int day = 1; day < n; day++) {
-    for (int task = 0; task < 3; task++) {
-      const int next = (task + 1) % 3;
-      const int prev = (task + 2) % 3;
-      happy[day][task] = hobby[day][task] + max(happy[day - 1][next], happy[day - 1][prev]);
-    }
+  for (int today = 1; today < n; today++) {
+    happy[today].a = hobby[today].a + max(happy[today - 1].b, happy[today - 1].c);
+    happy[today].b = hobby[today].b + max(happy[today - 1].c, happy[today - 1].a);
+    happy[today].c = hobby[today].c + max(happy[today - 1].a, happy[today - 1].b);
   }
-  cout << *max_element(happy[n - 1].begin(), happy[n - 1].end()) << "\n";
+  cout << max({happy[n - 1].a, happy[n - 1].b, happy[n - 1].c}) << "\n";
 }
