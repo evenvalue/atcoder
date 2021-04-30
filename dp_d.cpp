@@ -16,16 +16,11 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> w[i] >> v[i];
   }
-  vector<vector<int64>> best(n, vector<int64>(capacity + 1));
-  for (int wt = w[0]; wt <= capacity; wt++) {
-    best[0][wt] = v[0];
-  }
-  for (int i = 1; i < n; i++) {
-    for (int wt = 1; wt <= capacity; wt++) {
-      best[i][wt] = best[i - 1][wt];
-      if (w[i] > wt) continue;
-      best[i][wt] = max(best[i][wt], best[i - 1][wt - w[i]] + v[i]);
+  vector<int64> best(capacity + 1);
+  for (int item = 0; item < n; item++) {
+    for (int wt = capacity; wt >= w[item]; wt--) {
+      best[wt] = max(best[wt], best[wt - w[item]] + v[item]);
     }
   }
-  cout << best[n - 1][capacity] << "\n";
+  cout << best[capacity] << "\n";
 }
