@@ -22,14 +22,12 @@ int main() {
   vector<vector<int>> ways(h, vector<int>(w));
   ways[0][0] = 1;
   for (int c = 1; c < w; c++) {
-    if (not wall[0][c]) {
-      ways[0][c] = ways[0][c - 1];
-    }
+    if (wall[0][c]) break;
+    ways[0][c] = 1;
   }
   for (int r = 1; r < h; r++) {
-    if (not wall[r][0]) {
-      ways[r][0] = ways[r - 1][0];
-    }
+    if (wall[r][0]) break;
+    ways[r][0] = 1;
   }
   for (int r = 1; r < h; r++) {
     for (int c = 1; c < w; c++) {
