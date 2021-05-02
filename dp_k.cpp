@@ -16,7 +16,7 @@ int main() {
   vector<bool> dp(k + 1, false);
   for (int stones = 1; stones <= k; stones++) {
     for (const int &x : a) {
-      if (stones < x) continue;
+      if (stones < x) break;
       dp[stones] = dp[stones] | (not dp[stones - x]);
     }
   }
