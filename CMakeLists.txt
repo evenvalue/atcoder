@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all -fstack-protector")
 
 add_executable(abc169_e abc169_e.cpp)
+add_executable(abc209_c abc209_c.cpp)
 add_executable(abc210_a abc210_a.cpp)
 add_executable(abc210_b abc210_b.cpp)
 add_executable(abc210_c abc210_c.cpp)
