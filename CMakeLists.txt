@@ -6,6 +6,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wshadow -Wformat=2 -Wfloat-
 
 add_executable(abc169_e abc169_e.cpp)
 add_executable(abc209_c abc209_c.cpp)
+add_executable(abc209_d abc209_d.cpp)
 add_executable(abc210_a abc210_a.cpp)
 add_executable(abc210_b abc210_b.cpp)
 add_executable(abc210_c abc210_c.cpp)
