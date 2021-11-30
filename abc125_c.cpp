@@ -137,7 +137,7 @@ public:
 void solution() {
   const int n = readInt();
   const vector<int> &a = readVec<int>(n);
-  cp::segtree<int> st(a, [](const int l, const int r) {
+  const cp::segtree<int> st(a, [](const int l, const int r) {
     return gcd(l, r);
   });
   int ans = max(st.get(1, n - 1), st.get(0, n - 2));
