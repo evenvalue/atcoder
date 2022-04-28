@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_DEBUG "-Devenvalue ${CMAKE_CXX_FLAGS_DEBUG} -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fno-sanitize-recover=all")
 
 add_executable(abc011_3 abc011_3.cpp)
+add_executable(abc065_b abc065_b.cpp)
 add_executable(abc094_a abc094_a.cpp)
 add_executable(abc094_b abc094_b.cpp)
 add_executable(abc094_c abc094_c.cpp)
